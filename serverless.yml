@@ -1,0 +1,35 @@
+service: serverless-cart
+useDotenv: true
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  profile: 'sls'
+  region: 'eu-central-1'
+  vpc:
+    securityGroupIds:
+      - sg-0f155b643111f8727
+    subnetIds:
+      - subnet-02212005242c73f81
+      - subnet-05a784563956e1d6c
+      - subnet-001d4605aaf20e34b
+  environment:
+    POSTGRES_HOST: ${env:POSTGRES_HOST}
+    POSTGRES_PORT: ${env:POSTGRES_PORT}
+    POSTGRES_USER: ${env:POSTGRES_USER}
+    POSTGRES_PASSWORD: ${env:POSTGRES_PASSWORD}
+    POSTGRES_DATABASE: ${env:POSTGRES_DATABASE}
+
+
+functions:
+  main:
+    handler: dist/main.handler
+    events:
+      - http:
+          method: ANY
+          path: /
+      - http:
+          method: ANY
+          path: '{proxy+}'

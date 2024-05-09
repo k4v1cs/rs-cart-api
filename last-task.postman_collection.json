@@ -1,0 +1,189 @@
+{
+	"info": {
+		"_postman_id": "1303b64d-85e2-4f40-8a08-0319d9d2b369",
+		"name": "last-task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10729805"
+	},
+	"item": [
+		{
+			"name": "get cart",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "pass",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "timothy",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://qghervcoac.execute-api.eu-central-1.amazonaws.com/dev/api/profile/cart",
+					"protocol": "https",
+					"host": [
+						"qghervcoac",
+						"execute-api",
+						"eu-central-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"api",
+						"profile",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateCart",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "pass",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "timothy",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"items\": [{\"productId\": 7, \"count\": 666}, {\"productId\": 8, \"count\": 1}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://qghervcoac.execute-api.eu-central-1.amazonaws.com/dev/api/profile/cart",
+					"protocol": "https",
+					"host": [
+						"qghervcoac",
+						"execute-api",
+						"eu-central-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"api",
+						"profile",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete cart",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "pass",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "timothy",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://qghervcoac.execute-api.eu-central-1.amazonaws.com/dev/api/profile/cart",
+					"protocol": "https",
+					"host": [
+						"qghervcoac",
+						"execute-api",
+						"eu-central-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"api",
+						"profile",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "checkout",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "pass",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "timothy",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"payment\": {\"foo\": \"baz\"}, \"delivery\": {\"method\": \"GSL\"}, \"comments\": \"Please work...\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://qghervcoac.execute-api.eu-central-1.amazonaws.com/dev/api/profile/cart/checkout",
+					"protocol": "https",
+					"host": [
+						"qghervcoac",
+						"execute-api",
+						"eu-central-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"api",
+						"profile",
+						"cart",
+						"checkout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
